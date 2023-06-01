@@ -11,8 +11,11 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, Cloud Folks" > index.html
-              nohup busybox httpd -f -p 8080 &
+              sudo apt update
+              sudo apt install -y nginx
+              echo "<html><body><h1>Hey Folks!</h1></body></html>" | sudo tee /var/www/html/index.html
+              sudo systemctl start nginx
+              sudo systemctl enable nginx
               EOF
 }
 
