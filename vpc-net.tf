@@ -1,5 +1,5 @@
 module "vpc_net" {
-  source     = "git::git@gitlab.com:maslovskyi/terraform-playground.git//infra-1/modules/vpc_net"
+  source     = "git::https://gitlab.com/maslovskyi/terraform-playground.git//infra-1/modules/vpc_net"
   name       = "infra-vpc"
   cidr_block = "10.0.0.0/16"
 
@@ -14,7 +14,7 @@ module "vpc_net" {
 }
 
 # module "security-group" {
-#   source      = "git::git@gitlab.com:maslovskyi/terraform-playground.git//infra-1/modules/sg"
+#   source      = "git::https://gitlab.com/maslovskyi/terraform-playground.git//infra-1/modules/sg"
 #   name        = "infra-sg"
 #   description = "Infrastructure Security Group"
 #   vpc_id      = module.vpc_net.vpc_id
